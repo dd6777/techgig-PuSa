@@ -1,0 +1,19 @@
+.minicart {
+  width: 300px;
+  min-height: 74px;
+  background-color: #b2d4dc;
+  border-radius: 3px;
+  
+}
+
+.arrowUp {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid #b2d4dc;
+  position: absolute;
+  z-index: 5;
+  top: -11px;
+  right: 30px;
+}

@@ -1,0 +1,47 @@
+.miniCartItem {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  border-bottom: 2px solid #9dbec6;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .faIcon {
+    color: #d5e6ef;
+    display: flex;
+    align-items: center;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 15px;
+    color: #3b5b68;
+
+    h5 {
+      font-size: 16px;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+
+  .qty {
+    margin-left: auto;
+    margin-right: 25px;
+
+    p {
+      color: #3b5b68;
+      font-size: 11px;
+      margin: 0;
+    }
+  }
+}

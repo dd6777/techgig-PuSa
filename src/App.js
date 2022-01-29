@@ -1,10 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from "react-router-dom";
+import "./App.css";
+import Header from "./Header/Header";
+import Cart from "./Pages/Cart";
 
 function App() {
   return (
     <div className="App">
-      <h1>My APP</h1>
+      <Header />
+      <Routes>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/techgig-PuSa" element={<Navigate to="/cart" />} />
+      </Routes>
     </div>
   );
 }
