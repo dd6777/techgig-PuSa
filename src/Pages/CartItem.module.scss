@@ -39,11 +39,13 @@
       .cart-plus {
         margin-left: 6px;
         color: #a2b7bf;
+        cursor: pointer;
       }
   
       .cart-minus {
         margin-right: 6px;
         color: #a2b7bf;
+        cursor: pointer;
       }
     }
   
@@ -65,6 +67,7 @@
       p {
         color: #a2b7bf;
         font-size: 12px;
+        padding-right: 8px;
         margin: 0;
       }
     }
@@ -72,6 +75,7 @@
     .cartprice {
       font-size: 21px;
       color: #3b5b68;
+      padding-left: 8px;
       margin-left: auto;
       text-align: right;
     }

@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/cart" element={<Cart />} />
-        <Route path="/techgig-PuSa" element={<Navigate to="/cart" />} />
+        <Route path="*" element={<Navigate to="/cart" />} />
       </Routes>
     </div>
   );

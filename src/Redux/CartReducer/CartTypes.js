@@ -1,0 +1,8 @@
+const CartTypes = {
+    STARTER:"STARTER",
+    QUANTITY_CHANGE:"QUANTITY_CHANGE",
+    TOGGLE_CART:"TOGGLE_CART",
+    REMOVE_ITEM:"REMOVE_ITEM",
+}
+
+export default CartTypes
