@@ -1,6 +1,6 @@
 const newStateCreate = async () => {
   const response = await fetch(
-    "http://dnc0cmt2n557n.cloudfront.net/products.json"
+    "https://dnc0cmt2n557n.cloudfront.net/products.json"
   );
   const data = await response.json();
   const loadedData = [];
