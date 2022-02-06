@@ -1,8 +1,8 @@
 import CartTypes from "./CartTypes";
 
-const currentPersistence =
-  JSON.parse(localStorage.getItem("persist:root")) || null;
-
+const currentPersistence = localStorage.getItem("persist:root")
+  ? JSON.parse(JSON.parse(localStorage.getItem("persist:root")).cart).products
+  : null;
 export const StarterActionThunk = () => async (dispatch) => {
   if (currentPersistence === null || !currentPersistence) {
     const fetchData = await fetch(
@@ -21,7 +21,7 @@ export const StarterActionThunk = () => async (dispatch) => {
       });
     }
   } else {
-    finalResponse = JSON.parse(currentPersistence.cart.products);
+    finalResponse = currentPersistence
   }
   dispatch({ type: CartTypes.STARTER_THUNK, payload: finalResponse });
 };
