@@ -7,22 +7,33 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { QuantityChange } from "../Redux/CartReducer/CartActions";
 
-const CartItem = ({ id, name, description, price, qty, currency }) => {
+const CartItem = (props) => {
+  const { id, name, description, price, qty, currency } = props;
   const qtyInput = useRef();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(qty);
+  const [firstTime, setfirstTime] = useState(true);
+
   const addQty = () => {
     setQuantity((prevState) => prevState + 1);
   };
+  useEffect(() => {
+    setQuantity(qty);
+  }, [qty]);
 
-  useEffect(()=>{
-    dispatch(QuantityChange(qtyInput.current.id,qtyInput.current.value));
-  },[dispatch,quantity])
+  useEffect(() => {
+    if (firstTime) {
+      setfirstTime(false);
+    } else {
+      if (quantity !== 0) {
+        dispatch(QuantityChange(qtyInput.current.id, qtyInput.current.value));
+      }
+    }
+  }, [quantity, firstTime, dispatch]);
 
   const removeQty = () => {
     setQuantity((prevState) => (prevState === 0 ? prevState : prevState - 1));
   };
-
   return (
     <div className={classes.cartItem}>
       <div className={classes["cart-image"]}>

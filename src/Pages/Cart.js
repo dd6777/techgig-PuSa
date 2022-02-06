@@ -1,38 +1,19 @@
 import React from "react";
 import classes from "./Cart.module.scss";
 import CartItem from "./CartItem";
-import { StarterAction } from "../Redux/CartReducer/CartActions";
+import { StarterActionThunk } from "../Redux/CartReducer/CartActions";
 import { connect } from "react-redux";
 
 class Cart extends React.Component {
-  state = {
-    products: [],
-  };
-
   componentDidMount() {
-    this.props.starter();
-  }
-
-  shouldComponentUpdate() {
-    if (this.state.products.length === 0) {
-      return true;
-    }
-    return false;
-  }
-
-  componentDidUpdate() {
-    this.props.cart.then((data) =>
-      this.setState((prevState) => ({
-        products: [...prevState.products, ...data],
-      }))
-    );
+    this.props.starterThunk();
   }
 
   render() {
     return (
       <div className={classes.cart}>
-        {this.state.products.length &&
-          this.state.products.map((item) => {
+        {this.props.cart.length &&
+          this.props.cart.map((item) => {
             return (
               <CartItem
                 key={item.id}
@@ -55,7 +36,7 @@ const moveStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  starter: () => dispatch(StarterAction()),
+  starterThunk: () => dispatch(StarterActionThunk()),
 });
 
 export default connect(moveStateToProps, mapDispatchToProps)(Cart);

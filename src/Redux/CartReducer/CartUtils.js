@@ -1,48 +1,26 @@
-const newStateCreate = async () => {
-  const response = await fetch(
-    "https://dnc0cmt2n557n.cloudfront.net/products.json"
-  );
-  const data = await response.json();
-  const loadedData = [];
-
-  for (const key in data.products) {
-    loadedData.push({
-      id: data.products[key].id,
-      title: data.products[key].title,
-      desc: data.products[key].desc,
-      quantity: 1,
-      price: data.products[key].price,
-      currency: data.products[key].currency,
-    });
-  }
-  return loadedData;
-};
-
-export const qtyChange = async (state, payload) => {
-  const response = await state;
-  const ndata = [];
-  for (const key in response) {
-    if (response[key].id === payload.id) {
-      ndata.push({ ...response[key], quantity: payload.value });
+export const qtyChange = (state, payload) => {
+  const update = state.map((item) => {
+    if (item.id === payload.id) {
+      return { ...item, quantity: payload.value };
     } else {
-      ndata.push(response[key]);
+      return item;
     }
-  }
-  return ndata;
+  });
+  
+  return update;
 };
 
-export const removeItem = async (state, payload) => {
-  const response = await state;
-  const ndata = [];
-  for (const key in response) {
-    if (response[key].id !== payload) {
-      ndata.push(response[key]);
+export const removeItem = (stateCart, stateProducts, payload) => {
+  const updatedCart = stateCart.filter((item) => item.id !== payload);
+  const updatedProducts = stateProducts.map((item) => {
+    if (item.id === payload) {
+      return { ...item, quantity: 0 };
     } else {
-      
+      return item;
     }
-  }
-  console.log(ndata)
-  return ndata;
+  });
+  return {
+    cartProducts: updatedCart,
+    products: updatedProducts,
+  };
 };
-
-export default newStateCreate;
