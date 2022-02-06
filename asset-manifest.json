@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/techgig-PuSa/static/css/main.ec45116c.css",
-    "main.js": "/techgig-PuSa/static/js/main.91195675.js",
+    "main.js": "/techgig-PuSa/static/js/main.c91b2a30.js",
     "static/js/787.60288e5f.chunk.js": "/techgig-PuSa/static/js/787.60288e5f.chunk.js",
     "static/media/planet-svgrepo-com.svg": "/techgig-PuSa/static/media/planet-svgrepo-com.c92b630a7734e1d7faa1add3b1907e6e.svg",
     "static/media/shopping-cart-svgrepo-com.svg": "/techgig-PuSa/static/media/shopping-cart-svgrepo-com.01b6132241f5d294bebc7360314a0871.svg",
     "index.html": "/techgig-PuSa/index.html",
     "main.ec45116c.css.map": "/techgig-PuSa/static/css/main.ec45116c.css.map",
-    "main.91195675.js.map": "/techgig-PuSa/static/js/main.91195675.js.map",
+    "main.c91b2a30.js.map": "/techgig-PuSa/static/js/main.c91b2a30.js.map",
     "787.60288e5f.chunk.js.map": "/techgig-PuSa/static/js/787.60288e5f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec45116c.css",
-    "static/js/main.91195675.js"
+    "static/js/main.c91b2a30.js"
   ]
 }
